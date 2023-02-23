@@ -7,10 +7,6 @@
 		h1, h2, p, div {
 		  margin: 25px;
 		}
-		.required:after {
-	    content:" *";
-	    color: red;
-	  }
 	</style>
 </head>
 <body>
@@ -41,7 +37,25 @@
 
 <h2>Apply Now!</h2>
 <p>
-	<form>
+	<div class="modal">
+	  <input id="sentNotice" type="checkbox" />
+	  <label for="sentNotice" class="overlay"></label>
+	  <article>
+	    <header>
+	      <h3>Thanks</h3>
+	      <label for="sentNotice" class="close">&times;</label>
+	    </header>
+	    <section class="content">
+	      Your application has beed sent to us.
+	    </section>
+	    <footer>
+	      <label for="sentNotice" class="button success">
+	        Close
+	      </label>
+	    </footer>
+	  </article>
+	</div>
+	<form id="application">
 		<div class="third">
 				<fieldset class="flex two">
 				<label><input placeholder="Your Name" required></label>
@@ -52,9 +66,17 @@
 				<label>
 			    	<input type="file" accept=".doc, .docx, .pdf" required>
 			  	</label>
-				<button class="icon-paper-plane">Send</button>		
+				<button id="send" class="icon-paper-plane">Send</button>		
 		</div>	
-	</form>
+	</form>	
 </p>
 </body>
+
+<script>
+	document.querySelector('form').onsubmit = function(e){
+	  e.preventDefault();
+	  document.getElementById("sentNotice").checked = true;
+	}
+	
+</script>
 </html>
