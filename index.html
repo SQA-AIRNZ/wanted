@@ -1,85 +1,146 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<link href="https://cdn.jsdelivr.net/npm/picnic@7.1.0/picnic.min.css" rel="stylesheet">
-	<style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Password Protected</title>
 
-		h1, h2, p, div {
-		  margin: 25px;
-		}
-	</style>
-</head>
-<body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
 
-<h1 style="color:#00819e;">Senior Quality Assurance Engineer</h1>
-<h2>Kia ora!</h2>
-<p>Our Quality Assurance Engineers ensure the runway is clear for us to soar and help build our flight plan as we take off into our next chapter to reach our full potential. We are looking to enhance its technical testing capability. We are seeking applications from proactive individuals with 5+ years experience in QA Automation, Agile Methodologies, Java, Web (Selenium), Mobile (Appium), REST and SOAP APIs and testing emerging technologies. The scale and complexity and our digital products means that you will continually be learning and exposed to different technology stacks and work challenges. The environment is never static and will suit a keen learner with a curious mind who thrives on constant challenges, rewards and has the ability to shine! </p>
+        <style>
+            *,
+            *:after,
+            *:before {
+                box-sizing: border-box;
+            }
+            body,
+            html {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 300;
+                font-size: 16px;
+                background: #f2f2f2;
+                color: #2D3737;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100%;
+            }
 
-<h2>Why should you join us?</h2>
-<p>In a post pandemic world we are seeing unprecedented demand for travel. The activity we have underway and the momentum that is building places us at the forefront of changing domestic and international travel in a post pandemic world - a world that is once again opening up!</p>
-<p>As a Senior Quality Assurance engineer, you will be presented with opportunities to work with experienced testers, architects, developers as part of cross-functional squads from across the orgnization. You will be exposed to a variety of tools and technologies at a time where you can contribute towards our ambition to be the best flying experience on earth. </p>
-<p>We welcome people with fresh ideas, a broad set of attributes, technical skills who are ready to take on some of technology's greatest challenges and want to make an impact on our customers from around the world. This role will see you working on new customer experiences, API's and all the way to pushing the limits of what technology can do! We embrace CI/CD, modern technologies and Cloud. </p>
+            .protected {
+                background: #fff;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                border-radius: 3px;
+                min-width: 500px;
 
-<h2>What do we look for?</h2>
-<p>
-	<ul>
-		<li>Strong focus on the why and sense of enjoyment collaborating and contributing with teams to solve problems.</li>
-		<li>Sound knowledge of QA Automation, Agile Methodologies, Java, Web (Selenium), Mobile (Appium), REST and SOAP APIs </li>
-		<li>Design, develop and execute new automation scenarios from functional and technical requirements and change requests.</li>
-		<li>Maintain and monitor existing automation and regression testing, including ongoing refactoring of testsuites.</li>
-		<li>Apply software engineering principles to test engineering to ensure maximum ongoing value ofimplemented test suites</li>
-		<li>Identify defects, and work to assist with the resolution of these, promoting ideas on how these can beresolved efficiently and effectively in the future</li>
-		<li>Adaptable and a willingness to thrive in a fast-moving environment</li>
-		<li>Positive attitude to actively contribute to the strategic direction and technical roadmap of our software automation toolset and automated testing processes. </li>
-		<li>Commitment to fast and consistent delivery through full automation of build, test, and deployment processes. </li>
-	</ul>
-</p>
+            }
+            .protected__content {
+                padding: 24px 28px;
+            }
+            .protected__content__heading {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0 0 12px;
+                line-height: 1;
+            }
+            .protected__alert {
+                display: none;
+                border-bottom: 1px solid transparent;
+                border-radius: 3px 3px 0 0;
+                padding: 12px 14px;
+                color: #a94442;
+                background-color: #f2dede;
+                border-color: #ebccd1;
+            }
+            .protected__content__input {
+                display: block;
+                border: solid 1px #ccc;
+                padding: 12px 14px;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                font-size: 16px;
+                width: 100%;
+                border-radius: 3px;
 
-<h2>Apply Now!</h2>
-<p>
-	<div class="modal">
-	  <input id="sentNotice" type="checkbox" />
-	  <label for="sentNotice" class="overlay"></label>
-	  <article>
-	    <header>
-	      <h3>Thanks</h3>
-	      <label for="sentNotice" class="close">&times;</label>
-	    </header>
-	    <section class="content">
-	      Your application has beed sent to us.
-	    </section>
-	    <footer>
-	      <label for="sentNotice" class="button success">
-	        Close
-	      </label>
-	    </footer>
-	  </article>
-	</div>
-	<form id="application">
-		<div class="third">
-				<fieldset class="flex two">
-				<label><input id="name" placeholder="Your Name(*)" required></label>
-				<label><input id="email" type="email" placeholder="Email"></label>
-				</fieldset>
-				<textarea id="addtional" placeholder="Anything you'd like us to know"></textarea>	
-			        <label>Upload your CV</label><span style="color:red">*</span>
-				<label>
-			    	<input id="cvfile" type="file" accept=".doc, .docx, .pdf" required>
-			  	</label>
-				<button id="send" class="icon-paper-plane">Send</button>		
-		</div>	
-	</form>	
-</p>
-<p>
-	This is just sample page for interview ONLY.
-</p>
-</body>
+                margin-bottom: 12px;
+            }
+            .protected__content__input:focus {
+                outline: none;
+                border-color: #228843;
+            }
+            .protected__content__btn {
+                background-color: #228843;
+                border-radius: 3px;
+                cursor: pointer;
+                border: none;
+                color: #fff;
+                padding: 12px 14px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
 
-<script>
-	document.querySelector('form').onsubmit = function(e){
-	  e.preventDefault();
-	  document.getElementById("sentNotice").checked = true;
-	}
-	
-</script>
+            }
+            .protected__content__btn:hover {
+                background-color: #1C6D36;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="protected">
+            <div class="protected__alert" data-id="alert">You entered the wrong password</div>
+            <div class="protected__content">
+                <h1 class="protected__content__heading">You need a password to continue</h1>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="password"/>
+                <button data-id="button" type="button" class="protected__content__btn">Continue</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="sha1.min.js"></script>
+        <script type="text/javascript">
+            "use strict"
+            var button = document.querySelectorAll('[data-id="button"]')
+            var password = document.querySelectorAll('[data-id="password"]')
+
+            function login(secret) {
+                var hash = sha1(secret)
+                var url = hash + "/index.html"
+                var alert = document.querySelectorAll('[data-id="alert"]')
+
+                var request = new XMLHttpRequest()
+                request.open('GET', url, true)
+
+                request.onload = function () {
+                    if (request.status >= 200 && request.status < 400) {
+                        window.location = url
+                    } else {
+                        parent.location.hash = hash
+                        alert[0].style.display = 'block'
+                        password[0].setAttribute('placeholder', 'Incorrect password')
+                        password[0].value = ''
+                    }
+                }
+                request.onerror = function () {
+                    parent.location.hash = hash
+                    alert[0].style.display = 'block'
+                    password[0].setAttribute('placeholder', 'Incorrect password')
+                    password[0].value = ''
+                }
+                request.send()
+            }
+
+            button[0].addEventListener("click", function () {
+                login(password[0].value)
+            })
+
+            document.onkeydown = function (e) {
+                e = e || window.event
+                if (e.keyCode == 13) {
+                    login(password[0].value)
+                }
+            }
+        </script>
+    </body>
 </html>
