@@ -62,6 +62,12 @@
 				<label><input id="email" type="email" placeholder="Email"></label>
 				</fieldset>
 				<textarea id="comment" placeholder="Anything you'd like us to know"></textarea>	
+                <label>Upload your photo</label><span style="color:red">*</span>
+                <div style="width: 100px"> 
+                  <label class="dropimage">
+                    <input id="photo" title="Drop image or click me" type="file">
+                  </label>
+                </div>
 			        <label>Upload your CV</label><span style="color:red">*</span>
 				<label>
 			    	<input id="file" type="file" accept=".doc, .docx, .pdf" required>
@@ -77,5 +83,17 @@
 	  e.preventDefault();
 	  document.getElementById("sentNotice").checked = true;
 	}
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+        img.onchange = function(e){
+          var inputfile = this, reader = new FileReader();
+          reader.onloadend = function(){
+            inputfile.style['background-image'] = 'url('+reader.result+')';
+          }
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+    });
 </script>
 </html>
